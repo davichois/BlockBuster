@@ -1,11 +1,17 @@
 package com.alex.blockbuster.controller;
 
+import com.alex.blockbuster.Application;
 import com.alex.blockbuster.utils.Conectionsbd;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -21,7 +27,7 @@ public class InicioSesionController {
 
     private static Conectionsbd db = new Conectionsbd();
 
-    public void InicioSesion(ActionEvent actionEvent) throws SQLException {
+    public void InicioSesion(ActionEvent actionEvent) throws SQLException, IOException {
         String codigoUsuario = this.txtCodeUser.getText();
         String passContrasena = this.txtContrasena.getText();
 
@@ -40,7 +46,20 @@ public class InicioSesionController {
 
         if (codigoUsuarioQ.equals(codigoUsuario)) {
             if (passContrasenaQ.equals(passContrasena)){
+                // Poner mensaje
                 mensajeInicioSesion.setText("Bienvenido");
+                // Abrir nueva ventana
+                Parent root = FXMLLoader.load(Application.class.getResource("MenuSesionView.fxml"));
+                Scene scene = new Scene(root);
+                Stage stage = new Stage();
+                stage.setResizable(true);
+                stage.setTitle("Menu inicial");
+                stage.setScene(scene);
+                stage.show();
+
+                // Cerrar la ventana anterior
+                Stage old = (Stage) btn_inicio_sesion.getScene().getWindow();
+                old.close();
             } else {
                 mensajeInicioSesion.setText("No tienes una cuenta");
             }

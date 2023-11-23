@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alex.blockbuster.controller.InicioSesionController">
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="txtCodeUser" layoutX="225.0" layoutY="130.0" promptText="Cod. usuario" />
+            <TextField fx:id="txtContrasena" layoutX="225.0" layoutY="162.0" promptText="Contraseña" />
+            <Button fx:id="btn_inicio_sesion" layoutX="260.0" layoutY="217.0" mnemonicParsing="false" onAction="#InicioSesion" text="Iniciar Sesion" />
+            <Label fx:id="mensajeInicioSesion" layoutX="23.0" layoutY="369.0" AnchorPane.leftAnchor="23.0" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alex.blockbuster.controller.MenuSesionController">
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="286.0" layoutY="27.0" text="bliblioteca" />
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="214.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../java/com/alex/blockbuster/utils/imagenes/16633380346741.jpg" />
+               </image></ImageView>
+            <Button fx:id="btn_catalogo" layoutX="287.0" layoutY="228.0" mnemonicParsing="false" text="catalogo" />
+            <Button fx:id="btn_registrar" layoutX="288.0" layoutY="267.0" mnemonicParsing="false" text="Registrar" />
+            <Button fx:id="btn_prestamo" layoutX="285.0" layoutY="304.0" mnemonicParsing="false" text="Prestamo" />
+            <Button fx:id="btn_regresar" layoutX="29.0" layoutY="23.0" mnemonicParsing="false" text="Regresar" />
+            <Button fx:id="btn_administrar" layoutX="279.0" layoutY="341.0" mnemonicParsing="false" text="Administrar" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

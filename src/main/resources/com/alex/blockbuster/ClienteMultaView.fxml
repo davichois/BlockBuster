@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="414.0" prefWidth="713.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alex.blockbuster.controller.ClienteMultaController">
+   <children>
+      <TableView layoutX="4.0" layoutY="68.0" prefHeight="327.0" prefWidth="705.0">
+        <columns>
+          <TableColumn fx:id="tc_nombre" prefWidth="75.0" text="Nombre" />
+          <TableColumn fx:id="tc_dni" prefWidth="75.0" text="DNI" />
+            <TableColumn fx:id="tc_documento" prefWidth="131.8000030517578" text="Documento" />
+            <TableColumn fx:id="tc_fe" prefWidth="102.39999389648438" text="Fecha Entrega" />
+            <TableColumn fx:id="tc_fr" prefWidth="106.4000244140625" text="Fecha Regreso" />
+            <TableColumn fx:id="tc_multa" minWidth="0.0" prefWidth="82.0" text="Multa" />
+            <TableColumn fx:id="tc_deuda" prefWidth="129.79998779296875" text="Deuda" />
+        </columns>
+      </TableView>
+      <TextField fx:id="tc_busca_multa" layoutX="14.0" layoutY="24.0" onAction="#BuscarMultaCliente" prefHeight="25.0" prefWidth="455.0" promptText="Busca multa" />
+      <Button fx:id="btn_buscar" layoutX="480.0" layoutY="24.0" mnemonicParsing="false" onAction="#BuscarMulta" text="Buscar" />
+      <Button fx:id="btn_regresar" layoutX="624.0" layoutY="24.0" mnemonicParsing="false" onAction="#RegresarPrestamo" text="Regresar" />
+   </children>
+</Pane>

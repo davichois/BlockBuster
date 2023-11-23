@@ -10,7 +10,7 @@ public class Conectionsbd {
     //javaconnections:motorDB://host:port/schemaDB
     private static final String URL = "jdbc:mysql://localhost:3306/dbBlockbuster";
     private static final String USER = "root";
-    private static final String PASSWORD = "davidprada27";
+    private static final String PASSWORD = "fangoso32";
 
     //metodo para abrir la coneccion
     public Connection openConnection() throws SQLException {

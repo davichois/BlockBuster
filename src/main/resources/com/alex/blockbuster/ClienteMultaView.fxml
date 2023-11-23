@@ -16,8 +16,8 @@
             <TableColumn fx:id="tc_deuda" prefWidth="129.79998779296875" text="Deuda" />
         </columns>
       </TableView>
-      <TextField fx:id="tc_busca_multa" layoutX="14.0" layoutY="24.0" prefHeight="25.0" prefWidth="455.0" promptText="Busca multa" />
-      <Button fx:id="btn_buscar" layoutX="480.0" layoutY="24.0" mnemonicParsing="false" text="Buscar" />
-      <Button fx:id="btn_regresar" layoutX="624.0" layoutY="24.0" mnemonicParsing="false" text="Regresar" />
+      <TextField fx:id="tc_busca_multa" layoutX="14.0" layoutY="24.0" onAction="#BuscarMultaCliente" prefHeight="25.0" prefWidth="455.0" promptText="Busca multa" />
+      <Button fx:id="btn_buscar" layoutX="480.0" layoutY="24.0" mnemonicParsing="false" onAction="#BuscarMulta" text="Buscar" />
+      <Button fx:id="btn_regresar" layoutX="624.0" layoutY="24.0" mnemonicParsing="false" onAction="#RegresarPrestamo" text="Regresar" />
    </children>
 </Pane>

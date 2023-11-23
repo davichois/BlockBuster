@@ -8,10 +8,10 @@
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="btn_regresar" layoutX="30.0" layoutY="30.0" mnemonicParsing="false" text="Regresar" />
-            <Button fx:id="btn_catalogo" layoutX="277.0" layoutY="243.0" mnemonicParsing="false" text="Catalogo" />
-            <Button fx:id="btn_registrar" layoutX="278.0" layoutY="291.0" mnemonicParsing="false" text="Registar" />
-            <Button fx:id="btn_prestamo" layoutX="274.0" layoutY="336.0" mnemonicParsing="false" text="Prestamo" />
+            <Button fx:id="btn_regresar" layoutX="30.0" layoutY="30.0" mnemonicParsing="false" onAction="#RegresarInicio" text="Regresar" />
+            <Button fx:id="btn_catalogo" layoutX="20.0" layoutY="160.0" mnemonicParsing="false" onAction="#CatalogoBiblioteca" prefHeight="89.0" prefWidth="172.0" text="Catalogo" />
+            <Button fx:id="btn_registrar" layoutX="209.0" layoutY="160.0" mnemonicParsing="false" onAction="#RegistrarClientes" prefHeight="89.0" prefWidth="188.0" text="Registar" />
+            <Button fx:id="btn_prestamo" layoutX="409.0" layoutY="159.0" mnemonicParsing="false" onAction="#PrestamoCatalogo" prefHeight="91.0" prefWidth="167.0" text="Prestamo" />
             <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="200.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true" />
          </children></AnchorPane>
    </center>

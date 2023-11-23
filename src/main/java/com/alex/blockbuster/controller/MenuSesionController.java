@@ -29,7 +29,7 @@ public class MenuSesionController {
     }
 
     public void navRegistrar(ActionEvent actionEvent) throws IOException {
-        Parent root = FXMLLoader.load(Application.class.getResource("RegistroDataView.fxml"));
+        Parent root = FXMLLoader.load(Application.class.getResource("DataClienteView.fxml"));
         Scene scene = new Scene(root);
         Stage stage = new Stage();
         stage.setResizable(true);
@@ -39,7 +39,7 @@ public class MenuSesionController {
     }
 
     public void navPrestamo(ActionEvent actionEvent) throws IOException {
-        Parent root = FXMLLoader.load(Application.class.getResource("MenuSesionView.fxml"));
+        Parent root = FXMLLoader.load(Application.class.getResource("RegistroDataView.fxml"));
         Scene scene = new Scene(root);
         Stage stage = new Stage();
         stage.setResizable(true);

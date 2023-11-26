@@ -18,6 +18,8 @@ public class RegistroDataController {
     public ComboBox cb_fecha_entrega;
     public Button btn_multa_previa;
     public ComboBox cb_fecha_regreso;
+    public ComboBox cb_tipo_catalogo;
+    public ComboBox cb_tema_catalogo;
 
     public void BuscarDatosCliente(ActionEvent actionEvent) {
     }
@@ -53,5 +55,11 @@ public class RegistroDataController {
     }
 
     public void MultaPreviaCliente(ActionEvent actionEvent) {
+    }
+
+    public void SeleccionTipoCatalogo(ActionEvent actionEvent) {
+    }
+
+    public void SeleccionTemaCatalogo(ActionEvent actionEvent) {
     }
 }

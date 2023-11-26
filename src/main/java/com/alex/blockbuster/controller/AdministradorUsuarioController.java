@@ -34,6 +34,7 @@ public class AdministradorUsuarioController implements Initializable {
     public TableColumn<Usuario, String> tc_contrasena;
     public Button btn_eliminar;
     public Button btn_regresar;
+    public Button btn_nuevo_usuario;
 
     private ObservableList<Usuario> usuarios;
 
@@ -104,4 +105,6 @@ public class AdministradorUsuarioController implements Initializable {
         }
     }
 
+    public void CrearNuevoUsuario(ActionEvent actionEvent) {
+    }
 }

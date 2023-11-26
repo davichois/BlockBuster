@@ -2,42 +2,55 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<SplitPane dividerPositions="0.29797979797979796" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="429.0" prefWidth="887.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alex.blockbuster.controller.DataClienteController">
-  <items>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="193.0">
-         <children>
-            <Label layoutX="16.0" layoutY="14.0" text="Datos del Cliente" />
-            <Label layoutX="16.0" layoutY="57.0" text="DNI" />
-            <Label layoutX="16.0" layoutY="91.0" text="Nombre" />
-            <Label layoutX="15.0" layoutY="127.0" text="Apellido" />
-            <Label layoutX="15.0" layoutY="165.0" text="Email" />
-            <Label layoutX="14.0" layoutY="199.0" text="Celular" />
-            <Label layoutX="13.0" layoutY="234.0" text="Direccion" />
-            <RadioButton fx:id="ap_varon" layoutX="86.0" layoutY="273.0" mnemonicParsing="false" onAction="#SeleccionarVaron" text="M" />
-            <RadioButton fx:id="ap_mujer" layoutX="186.0" layoutY="273.0" mnemonicParsing="false" onAction="#SeleccionarMujer" text="F" />
-            <Button fx:id="btn_guardar" layoutX="14.0" layoutY="326.0" mnemonicParsing="false" onAction="#GuardarDatosCliente" text="Guardar" />
-            <Button fx:id="btn_cd" layoutX="86.0" layoutY="326.0" mnemonicParsing="false" onAction="#CargarDatosCliente" text="Cargar Datos" />
-            <Button fx:id="btn_eliminar" layoutX="186.0" layoutY="326.0" mnemonicParsing="false" onAction="#EliminarDatosCliente" text="Eliminar" />
-            <TextField fx:id="tf_dni" layoutX="87.0" layoutY="53.0" onAction="#PanelDatosDni" prefHeight="26.0" prefWidth="160.0" />
-            <TextField fx:id="tf_nombre" layoutX="87.0" layoutY="87.0" onAction="#PanelDatosNombre" prefHeight="26.0" prefWidth="160.0" />
-            <TextField fx:id="tf_apellido" layoutX="86.0" layoutY="122.0" onAction="#PanelDatosApellido" prefHeight="26.0" prefWidth="160.0" />
-            <TextField fx:id="tf_email" layoutX="85.0" layoutY="158.0" onAction="#PanelDatosEmail" prefHeight="26.0" prefWidth="160.0" />
-            <TextField fx:id="tf_celular" layoutX="85.0" layoutY="194.0" onAction="#PanelDatosCelular" prefHeight="26.0" prefWidth="160.0" />
-            <TextField fx:id="tf_direccion" layoutX="85.0" layoutY="229.0" onAction="#PanelDatosDireccion" prefHeight="26.0" prefWidth="160.0" />
-            <Button fx:id="btn_regresar" layoutX="12.0" layoutY="381.0" mnemonicParsing="false" onAction="#RegresarMenu" text="Regresar" />
-         </children></AnchorPane>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="424.0" prefWidth="609.0">
-         <children>
-            <TableView layoutX="5.0" layoutY="3.0" prefHeight="398.0" prefWidth="598.0" AnchorPane.bottomAnchor="22.0" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="22.0">
-              <columns>
-                <TableColumn fx:id="tc_id" prefWidth="33.0" text="ID" />
-                <TableColumn fx:id="tc_dni" prefWidth="117.0" text="DNI" />
-                  <TableColumn fx:id="tc_nombre" prefWidth="109.5" text="Nombre" />
-                  <TableColumn fx:id="tc_email" prefWidth="198.5" text="Email" />
-                  <TableColumn fx:id="tc_celular" prefWidth="115.0" text="Celular" />
-              </columns>
-            </TableView>
-         </children></AnchorPane>
-  </items>
+<SplitPane dividerPositions="0.29797979797979796" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="453.0" prefWidth="887.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alex.blockbuster.controller.DataClienteController">
+    <items>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="193.0">
+            <children>
+                <Label layoutX="16.0" layoutY="14.0" text="Datos del Cliente">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Label>
+                <Label layoutX="16.0" layoutY="57.0" text="DNI" />
+                <Label layoutX="16.0" layoutY="91.0" text="Nombre" />
+                <Label layoutX="15.0" layoutY="127.0" text="Apellido" />
+                <Label layoutX="15.0" layoutY="165.0" text="Email" />
+                <Label layoutX="14.0" layoutY="199.0" text="Celular" />
+                <Label layoutX="13.0" layoutY="234.0" text="Direccion" />
+                <RadioButton fx:id="rb_masculino" layoutX="86.0" layoutY="273.0" mnemonicParsing="false" onAction="#getSex" text="M">
+                    <toggleGroup>
+                        <ToggleGroup fx:id="sexo" />
+                    </toggleGroup>
+                </RadioButton>
+                <RadioButton fx:id="rb_feminenino" layoutX="186.0" layoutY="273.0" mnemonicParsing="false" onAction="#getSex" text="F" toggleGroup="$sexo" />
+                <Button fx:id="btn_guardar" layoutX="14.0" layoutY="326.0" mnemonicParsing="false" onAction="#GuardarDatosCliente" text="Guardar" />
+                <Button fx:id="btn_cd" layoutX="15.0" layoutY="356.0" mnemonicParsing="false" onAction="#CargarDatosCliente" text="C" />
+                <Button fx:id="btn_eliminar" layoutX="186.0" layoutY="326.0" mnemonicParsing="false" onAction="#EliminarDatosCliente" text="Eliminar" />
+                <TextField fx:id="tf_dni" layoutX="87.0" layoutY="53.0" prefHeight="26.0" prefWidth="160.0" />
+                <TextField fx:id="tf_nombre" layoutX="87.0" layoutY="87.0" prefHeight="26.0" prefWidth="160.0" />
+                <TextField fx:id="tf_apellido" layoutX="86.0" layoutY="122.0" prefHeight="26.0" prefWidth="160.0" />
+                <TextField fx:id="tf_email" layoutX="85.0" layoutY="158.0" prefHeight="26.0" prefWidth="160.0" />
+                <TextField fx:id="tf_celular" layoutX="85.0" layoutY="194.0" prefHeight="26.0" prefWidth="160.0" />
+                <TextField fx:id="tf_direccion" layoutX="85.0" layoutY="229.0" prefHeight="26.0" prefWidth="160.0" />
+                <Button fx:id="btn_regresar" layoutX="12.0" layoutY="411.0" mnemonicParsing="false" onAction="#RegresarMenu" text="Regresar" />
+            <Button fx:id="btn_actualizar" layoutX="94.0" layoutY="326.0" mnemonicParsing="false" onAction="#ActualizarDatosCliente" text="Actualizar" />
+            <Button fx:id="btn_clear" layoutX="49.0" layoutY="356.0" mnemonicParsing="false" onAction="#LimpiarDatosCliente" text="L" />
+            </children>
+        </AnchorPane>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="424.0" prefWidth="609.0">
+            <children>
+                <TableView fx:id="tbl_cliente" layoutX="5.0" layoutY="3.0" prefHeight="398.0" prefWidth="598.0" AnchorPane.bottomAnchor="22.0" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="22.0">
+                    <columns>
+                        <TableColumn fx:id="tc_id" prefWidth="33.0" text="ID" />
+                        <TableColumn fx:id="tc_dni" prefWidth="117.0" text="DNI" />
+                        <TableColumn fx:id="tc_nombre" prefWidth="109.5" text="Nombre" />
+                        <TableColumn fx:id="tc_email" prefWidth="198.5" text="Email" />
+                        <TableColumn fx:id="tc_celular" prefWidth="115.0" text="Celular" />
+                    </columns>
+                </TableView>
+            </children>
+        </AnchorPane>
+    </items>
 </SplitPane>

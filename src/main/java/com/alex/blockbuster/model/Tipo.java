@@ -21,11 +21,11 @@ public class Tipo {
         this.idTipo = idTipo;
     }
 
-    public String getNiTipo() {
+    public String getNoTipo() {
         return noTipo;
     }
 
-    public void setNiTipo(String noTipo) {
+    public void setNoTipo(String noTipo) {
         this.noTipo = noTipo;
     }
 }

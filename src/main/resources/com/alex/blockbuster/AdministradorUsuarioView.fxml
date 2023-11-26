@@ -7,15 +7,15 @@
     <center>
         <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
             <children>
-                <TableView layoutX="24.0" layoutY="23.0" prefHeight="312.0" prefWidth="559.0">
+                <TableView fx:id="tbl_usuarios" layoutX="24.0" layoutY="23.0" prefHeight="312.0" prefWidth="559.0" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="22.0">
                     <columns>
-                        <TableColumn fx:id="tc_id" prefWidth="84.39999198913574" text="ID" />
-                        <TableColumn fx:id="tc_usuario" prefWidth="346.7999954223633" text="Usuario" />
-                        <TableColumn fx:id="tc_contraseña" prefWidth="129.99996948242188" text="Contraseña" />
+                        <TableColumn fx:id="tc_id" prefWidth="56.5" text="ID" />
+                        <TableColumn fx:id="tc_usuario" prefWidth="281.0" text="Usuario" />
+                        <TableColumn fx:id="tc_contrasena" prefWidth="217.5" text="Contraseña" />
                     </columns>
                 </TableView>
-                <Button fx:id="btn_eliminar" layoutX="24.0" layoutY="351.0" mnemonicParsing="false" onAction="#EliminarUsuario" text="Eliminar" />
-                <Button fx:id="btn_regresar" layoutX="519.0" layoutY="351.0" mnemonicParsing="false" onAction="#RegresarMenu" text="Regresar" />
+                <Button fx:id="btn_eliminar" layoutX="24.0" layoutY="351.0" mnemonicParsing="false" onAction="#EliminarUsuario" text="Eliminar" AnchorPane.leftAnchor="22.0" />
+                <Button fx:id="btn_regresar" layoutX="517.0" layoutY="351.0" mnemonicParsing="false" onAction="#RegresarMenu" text="Regresar" AnchorPane.rightAnchor="22.0" />
             </children>
         </AnchorPane>
     </center>

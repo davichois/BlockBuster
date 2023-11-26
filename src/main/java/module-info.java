@@ -5,7 +5,11 @@ module com.alex.blockbuster {
 
 
     opens com.alex.blockbuster to javafx.fxml;
-    exports com.alex.blockbuster;
-    exports com.alex.blockbuster.controller;
+    opens com.alex.blockbuster.model to javafx.fxml;
     opens com.alex.blockbuster.controller to javafx.fxml;
+
+    exports com.alex.blockbuster;
+    exports com.alex.blockbuster.model;
+    exports com.alex.blockbuster.controller;
+
 }

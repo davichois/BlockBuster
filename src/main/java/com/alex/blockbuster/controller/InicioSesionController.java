@@ -19,6 +19,7 @@ import java.sql.SQLException;
 
 public class InicioSesionController {
 
+    static public boolean isAdmin;
 
     public Button btn_inicio_sesion;
     public TextField txtCodeUser;
@@ -33,6 +34,7 @@ public class InicioSesionController {
 
         String codigoUsuarioQ = "";
         String passContrasenaQ = "";
+        int isAdminQ = 0;
 
         Connection connection = db.openConnection();
         PreparedStatement ps = connection.prepareStatement("select * from usuario where co_usuario=? and pas_usuario=?");
@@ -42,7 +44,10 @@ public class InicioSesionController {
         while (rs.next()){
             codigoUsuarioQ = rs.getString("co_usuario");
             passContrasenaQ = rs.getString("pas_usuario");
+            isAdminQ = rs.getInt("ti_usuario");
         }
+
+        isAdmin = isAdminQ == 1;
 
         if (codigoUsuarioQ.equals(codigoUsuario)) {
             if (passContrasenaQ.equals(passContrasena)){

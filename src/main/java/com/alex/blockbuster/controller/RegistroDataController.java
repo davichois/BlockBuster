@@ -1,65 +1,70 @@
 package com.alex.blockbuster.controller;
 
+import com.alex.blockbuster.model.Documento;
+import com.alex.blockbuster.utils.Conectionsbd;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
-public class RegistroDataController {
+import java.net.URL;
+import java.sql.SQLException;
+import java.util.Date;
+import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+public class RegistroDataController implements Initializable {
+    //atributos
     public Button btn_buscar;
     public TextField txt_ingrese_dni;
-    public TextField txt_dni;
-    public TextField txt_nombre;
-    public TextField txt_email;
     public Button btn_enviar_email;
     public Button btn_confirmar;
     public Button btn_cancelar;
-    public ComboBox cb_nombre;
-    public ComboBox cb_fecha_entrega;
+    public ComboBox<String> cb_nombre;
+    public ComboBox<Date> cb_fecha_entrega;
     public Button btn_multa_previa;
-    public ComboBox cb_fecha_regreso;
-    public ComboBox cb_tipo_catalogo;
-    public ComboBox cb_tema_catalogo;
+    public ComboBox<Date> cb_fecha_regreso;
+    public ComboBox<String> cb_tipo_catalogo;
+    public ComboBox<String> cb_tema_catalogo;
+    public Label lb_dni_prestamo;
+    public Label lb_nombre_prestamo;
+    public Label lb_email_prestamo;
+
+    private ObservableList<Documento> producto;
+    private ObservableList<String> tipo_documentos;
+    private ObservableList<String> etiquetas;
+
+    //metodos
+    private static Conectionsbd db = new Conectionsbd();
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        producto = FXCollections.observableArrayList();
+        tipo_documentos = FXCollections.observableArrayList();
+        etiquetas = FXCollections.observableArrayList();
+
+    }
 
     public void BuscarDatosCliente(ActionEvent actionEvent) {
-    }
-
-    public void PanelDni(ActionEvent actionEvent) {
-    }
-
-    public void PanelDniCliente(ActionEvent actionEvent) {
-    }
-
-    public void PanelNombreCliente(ActionEvent actionEvent) {
-    }
-
-    public void PanelEmailCliente(ActionEvent actionEvent) {
     }
 
     public void EnviarEmailCliente(ActionEvent actionEvent) {
     }
 
     public void ConfirmarPrestamo(ActionEvent actionEvent) {
+
     }
 
     public void CancelarPrestamo(ActionEvent actionEvent) {
-    }
-
-    public void SeleccionNombreLibro(ActionEvent actionEvent) {
-    }
-
-    public void SeleccionFechaEntrega(ActionEvent actionEvent) {
-    }
-
-    public void SeleccionFechaRegreso(ActionEvent actionEvent) {
+        Stage stage = (Stage) this.btn_cancelar.getScene().getWindow();
+        stage.close();
     }
 
     public void MultaPreviaCliente(ActionEvent actionEvent) {
-    }
-
-    public void SeleccionTipoCatalogo(ActionEvent actionEvent) {
-    }
-
-    public void SeleccionTemaCatalogo(ActionEvent actionEvent) {
     }
 }

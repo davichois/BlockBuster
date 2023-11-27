@@ -21,6 +21,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class DataClienteController implements Initializable {
+    //atributos
     public Button btn_guardar;
     public Button btn_cd;
     public Button btn_eliminar;

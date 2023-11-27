@@ -6,12 +6,11 @@ import com.alex.blockbuster.model.Tipo;
 import com.alex.blockbuster.utils.Conectionsbd;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.sql.Connection;
@@ -23,18 +22,20 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class SeleccionCatalogoController implements Initializable {
-
+    //atributos
     public TableView<Documento> tbl_documentos;
     public ComboBox<String> cb_tipo_informacion;
     public ComboBox<String> cb_tema_interes;
     public TextField txt_buscar;
     public TableColumn<Documento, Integer> tc_id;
     public TableColumn<Documento, String> tc_nombre;
+    public Button btn_regresar;
 
     private ObservableList<Documento> producto;
     private ObservableList<String> tipo_documentos;
     private ObservableList<String> etiquetas;
 
+    //metodos
     private static Conectionsbd db = new Conectionsbd();
 
     @Override
@@ -90,4 +91,8 @@ public class SeleccionCatalogoController implements Initializable {
         }
     }
 
+    public void RegresarVentana(ActionEvent actionEvent) {
+        Stage stage = (Stage) this.btn_regresar.getScene().getWindow();
+        stage.close();
+    }
 }

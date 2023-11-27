@@ -19,13 +19,13 @@
                 <Label layoutX="24.0" layoutY="234.0" text="Nombre Catalogo" />
                 <Label layoutX="306.0" layoutY="234.0" text="Fecha de Entrega" />
                 <Label layoutX="24.0" layoutY="286.0" text="Fecha de regreso" />
-                <Button fx:id="btn_confirmar" layoutX="142.0" layoutY="342.0" mnemonicParsing="false" onAction="#ConfirmarPrestamo" text="Confirmar" />
+                <Button fx:id="btn_confirmar" layoutX="155.0" layoutY="342.0" mnemonicParsing="false" onAction="#ConfirmarPrestamo" text="Confirmar" />
                 <Button fx:id="btn_cancelar" layoutX="501.0" layoutY="342.0" mnemonicParsing="false" onAction="#CancelarPrestamo" text="Cancelar" />
                 <ComboBox fx:id="cb_tipo_catalogo" layoutX="137.0" layoutY="182.0" prefWidth="150.0" />
-                <Button fx:id="btn_multa_previa" layoutX="22.0" layoutY="342.0" mnemonicParsing="false" onAction="#MultaPreviaCliente" text="Multa previa" />
-                <Label fx:id="lb_dni_prestamo" layoutX="47.0" layoutY="108.0" text="Label" />
-                <Label fx:id="lb_nombre_prestamo" layoutX="232.0" layoutY="109.0" text="Label" />
-                <Label fx:id="lb_email_prestamo" layoutX="434.0" layoutY="110.0" text="Label" />
+                <Button fx:id="btn_multa_previa" layoutX="22.0" layoutY="342.0" mnemonicParsing="false" onAction="#MultaPreviaCliente" text="Multa o prestamos" />
+                <Label fx:id="lb_dni_prestamo" layoutX="47.0" layoutY="108.0" text="-" />
+                <Label fx:id="lb_nombre_prestamo" layoutX="232.0" layoutY="109.0" text="-" />
+                <Label fx:id="lb_email_prestamo" layoutX="434.0" layoutY="110.0" text="-" />
                 <Separator layoutX="3.0" layoutY="71.0" prefHeight="1.0" prefWidth="590.0" />
                 <Separator layoutX="3.0" layoutY="136.0" prefHeight="3.0" prefWidth="591.0" />
                 <Label layoutX="24.0" layoutY="186.0" text="Tipo Catalogo" />

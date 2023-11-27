@@ -50,7 +50,7 @@ public class InicioSesionController {
         isAdmin = isAdminQ == 1;
 
         if (codigoUsuarioQ.equals(codigoUsuario)) {
-            if (passContrasenaQ.equals(passContrasena)){
+            if (passContrasenaQ.equals(passContrasena) && !passContrasenaQ.isBlank()){
                 // Poner mensaje
                 mensajeInicioSesion.setText("Bienvenido");
                 // Abrir nueva ventana

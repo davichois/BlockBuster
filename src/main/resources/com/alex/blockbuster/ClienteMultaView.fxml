@@ -19,6 +19,7 @@
       <TextField fx:id="tc_busca_multa" layoutX="14.0" layoutY="24.0" onKeyReleased="#BuscarMultaCliente" prefHeight="25.0" prefWidth="455.0" promptText="Busca multa" />
       <Button fx:id="btn_regresar" layoutX="624.0" layoutY="24.0" mnemonicParsing="false" onAction="#RegresarPrestamo" text="Regresar" />
       <Button fx:id="btn_recalcular" layoutX="15.0" layoutY="375.0" mnemonicParsing="false" onAction="#RecalcularDeuda" text="Recalcular deuda" />
-      <Button layoutX="132.0" layoutY="375.0" mnemonicParsing="false" text="Cancelacion de prestamo o deuda" />
+      <Button fx:id="btn_cancelacion_prestamo" layoutX="132.0" layoutY="375.0" mnemonicParsing="false" onAction="#CancelacionPrestamo" text="Cancelacion de prestamo" />
+      <Button fx:id="btn_cancelacion_multa" layoutX="296.0" layoutY="375.0" mnemonicParsing="false" onAction="#CancelacionMulta" text="Cancelacion de multa" />
    </children>
 </Pane>

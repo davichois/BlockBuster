@@ -4,38 +4,37 @@
 <?import javafx.scene.layout.*?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alex.blockbuster.controller.RegistroDataController">
-   <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <children>
-            <Label layoutX="268.0" layoutY="11.0" text="Buscar Cliente" />
-            <Button fx:id="btn_buscar" layoutX="394.0" layoutY="36.0" mnemonicParsing="false" onAction="#BuscarDatosCliente" text="Buscar" />
-            <Label layoutX="157.0" layoutY="40.0" text="Ingrese DNI" />
-            <TextField fx:id="txt_ingrese_dni" layoutX="232.0" layoutY="36.0" />
-            <Label layoutX="18.0" layoutY="83.0" text="Datos del Cliente" />
-            <Label layoutX="18.0" layoutY="109.0" text="DNI" />
-            <Label layoutX="178.0" layoutY="108.0" text="Nombre" />
-            <Label layoutX="391.0" layoutY="110.0" text="Email" />
-            <Label layoutX="18.0" layoutY="148.0" text="Prestamo de Libro o tesis" />
-            <Label layoutX="24.0" layoutY="234.0" text="Nombre Catalogo" />
-            <Label layoutX="307.0" layoutY="236.0" text="Fecha de Entrega" />
-            <Label layoutX="24.0" layoutY="286.0" text="Fecha de regreso" />
-            <Button fx:id="btn_enviar_email" layoutX="54.0" layoutY="341.0" mnemonicParsing="false" onAction="#EnviarEmailCliente" text="Enviar Email" />
-            <Button fx:id="btn_confirmar" layoutX="464.0" layoutY="341.0" mnemonicParsing="false" onAction="#ConfirmarPrestamo" text="Confirmar" />
-            <Button fx:id="btn_cancelar" layoutX="329.0" layoutY="342.0" mnemonicParsing="false" onAction="#CancelarPrestamo" text="Cancelar" />
-            <ComboBox fx:id="cb_tipo_catalogo" layoutX="137.0" layoutY="182.0" prefWidth="150.0" />
-            <ComboBox fx:id="cb_fecha_entrega" layoutX="417.0" layoutY="233.0" prefWidth="150.0" />
-            <ComboBox fx:id="cb_fecha_regreso" layoutX="137.0" layoutY="282.0" prefWidth="150.0" />
-            <Button fx:id="btn_multa_previa" layoutX="185.0" layoutY="341.0" mnemonicParsing="false" onAction="#MultaPreviaCliente" text="Multa previa" />
-            <Label fx:id="lb_dni_prestamo" layoutX="87.0" layoutY="109.0" text="Label" />
-            <Label fx:id="lb_nombre_prestamo" layoutX="295.0" layoutY="109.0" text="Label" />
-            <Label fx:id="lb_email_prestamo" layoutX="498.0" layoutY="109.0" text="Label" />
-            <Separator layoutX="3.0" layoutY="71.0" prefHeight="1.0" prefWidth="590.0" />
-            <Separator layoutX="3.0" layoutY="136.0" prefHeight="3.0" prefWidth="591.0" />
-            <Label layoutX="24.0" layoutY="186.0" text="Tipo Catalogo" />
-            <Label layoutX="306.0" layoutY="187.0" text="Tema Catalogo" />
-            <ComboBox fx:id="cb_tema_catalogo" layoutX="417.0" layoutY="183.0" prefWidth="150.0" />
-            <ComboBox fx:id="cb_nombre" layoutX="137.0" layoutY="233.0" prefWidth="150.0" />
-         </children>
-      </AnchorPane>
-   </center>
+    <center>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label layoutX="18.0" layoutY="6.0" text="Buscar Cliente" />
+                <Button fx:id="btn_buscar" layoutX="512.0" layoutY="36.0" mnemonicParsing="false" onAction="#BuscarDatosCliente" text="Buscar" />
+                <Label layoutX="18.0" layoutY="41.0" text="Ingrese DNI" />
+                <TextField fx:id="txt_ingrese_dni" layoutX="93.0" layoutY="36.0" prefHeight="26.0" prefWidth="410.0" />
+                <Label layoutX="18.0" layoutY="83.0" text="Datos del Cliente" />
+                <Label layoutX="18.0" layoutY="109.0" text="DNI" />
+                <Label layoutX="178.0" layoutY="108.0" text="Nombre" />
+                <Label layoutX="391.0" layoutY="110.0" text="Email" />
+                <Label layoutX="18.0" layoutY="148.0" text="Prestamo de Libro o tesis" />
+                <Label layoutX="24.0" layoutY="234.0" text="Nombre Catalogo" />
+                <Label layoutX="306.0" layoutY="234.0" text="Fecha de Entrega" />
+                <Label layoutX="24.0" layoutY="286.0" text="Fecha de regreso" />
+                <Button fx:id="btn_confirmar" layoutX="142.0" layoutY="342.0" mnemonicParsing="false" onAction="#ConfirmarPrestamo" text="Confirmar" />
+                <Button fx:id="btn_cancelar" layoutX="501.0" layoutY="342.0" mnemonicParsing="false" onAction="#CancelarPrestamo" text="Cancelar" />
+                <ComboBox fx:id="cb_tipo_catalogo" layoutX="137.0" layoutY="182.0" prefWidth="150.0" />
+                <Button fx:id="btn_multa_previa" layoutX="22.0" layoutY="342.0" mnemonicParsing="false" onAction="#MultaPreviaCliente" text="Multa previa" />
+                <Label fx:id="lb_dni_prestamo" layoutX="47.0" layoutY="108.0" text="Label" />
+                <Label fx:id="lb_nombre_prestamo" layoutX="232.0" layoutY="109.0" text="Label" />
+                <Label fx:id="lb_email_prestamo" layoutX="434.0" layoutY="110.0" text="Label" />
+                <Separator layoutX="3.0" layoutY="71.0" prefHeight="1.0" prefWidth="590.0" />
+                <Separator layoutX="3.0" layoutY="136.0" prefHeight="3.0" prefWidth="591.0" />
+                <Label layoutX="24.0" layoutY="186.0" text="Tipo Catalogo" />
+                <Label layoutX="306.0" layoutY="187.0" text="Tema Catalogo" />
+                <ComboBox fx:id="cb_tema_catalogo" layoutX="417.0" layoutY="183.0" prefWidth="150.0" />
+                <ComboBox fx:id="cb_nombre" layoutX="137.0" layoutY="233.0" onAction="#getDocumeto" prefWidth="150.0" />
+            <DatePicker fx:id="dp_fecha_regreso" layoutX="137.0" layoutY="282.0" onAction="#GetFinalFecha" prefHeight="26.0" prefWidth="150.0" />
+            <DatePicker fx:id="dp_fecha_entrega" layoutX="417.0" layoutY="232.0" onAction="#GetInicioFecha" prefHeight="26.0" prefWidth="150.0" />
+            </children>
+        </AnchorPane>
+    </center>
 </BorderPane>

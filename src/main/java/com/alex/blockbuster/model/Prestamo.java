@@ -1,33 +1,27 @@
 package com.alex.blockbuster.model;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 public class Prestamo {
     //atributos
     private int idDocumento;
     private int isActivo;
-    private LocalDateTime fePrestamo;
+    private LocalDate fePrestamo;
+    private LocalDate ffPrestamo;
     private Cliente cliente;
     private Documento documento;
 
     //constructor
-    public Prestamo(int idDocumento, int isActivo, LocalDateTime fePrestamo,Cliente cliente, Documento documento) {
+    public Prestamo(int idDocumento, int isActivo, LocalDate fePrestamo, LocalDate ffPrestamo, Cliente cliente, Documento documento) {
         this.idDocumento = idDocumento;
         this.isActivo = isActivo;
+        this.fePrestamo = fePrestamo;
+        this.ffPrestamo = ffPrestamo;
         this.cliente = cliente;
         this.documento = documento;
-        this.fePrestamo = fePrestamo;
     }
 
     //metodos
-    public int getIdLibro() {
-        return idDocumento;
-    }
-
-    public void setIdLibro(int idLibro) {
-        this.idDocumento = idLibro;
-    }
-
     public int getIsActivo() {
         return isActivo;
     }
@@ -52,11 +46,27 @@ public class Prestamo {
         this.documento = documento;
     }
 
-    public LocalDateTime getFePrestamo() {
+    public int getIdDocumento() {
+        return idDocumento;
+    }
+
+    public void setIdDocumento(int idDocumento) {
+        this.idDocumento = idDocumento;
+    }
+
+    public LocalDate getFePrestamo() {
         return fePrestamo;
     }
 
-    public void setFePrestamo(LocalDateTime fePrestamo) {
+    public void setFePrestamo(LocalDate fePrestamo) {
         this.fePrestamo = fePrestamo;
+    }
+
+    public LocalDate getFfPrestamo() {
+        return ffPrestamo;
+    }
+
+    public void setFfPrestamo(LocalDate ffPrestamo) {
+        this.ffPrestamo = ffPrestamo;
     }
 }

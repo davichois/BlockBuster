@@ -81,17 +81,8 @@ public class AdministradorUsuarioController implements Initializable {
     }
 
     public void RegresarMenu(ActionEvent actionEvent) throws IOException {
-        Parent root = FXMLLoader.load(Application.class.getResource("MenuSesionView.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage = new Stage();
-        stage.setResizable(true);
-        stage.setTitle("Menu inicial");
-        stage.setScene(scene);
-        stage.show();
-
-        // Cerrar la ventana anterior
-        Stage old = (Stage) btn_regresar.getScene().getWindow();
-        old.close();
+        Stage stage = (Stage) this.btn_regresar.getScene().getWindow();
+        stage.close();
     }
 
     private void traerDatosUsuario() throws SQLException {

@@ -5,7 +5,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="414.0" prefWidth="713.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alex.blockbuster.controller.ClienteMultaController">
    <children>
-      <TableView fx:id="tbl_multa_cliente" layoutX="4.0" layoutY="68.0" prefHeight="327.0" prefWidth="705.0">
+      <TableView fx:id="tbl_multa_cliente" layoutX="15.0" layoutY="68.0" prefHeight="288.0" prefWidth="676.0">
         <columns>
           <TableColumn fx:id="tc_nombre" prefWidth="75.0" text="Nombre" />
           <TableColumn fx:id="tc_dni" prefWidth="75.0" text="DNI" />
@@ -16,8 +16,9 @@
             <TableColumn fx:id="tc_deuda" prefWidth="144.4000244140625" text="Deuda" />
         </columns>
       </TableView>
-      <TextField fx:id="tc_busca_multa" layoutX="14.0" layoutY="24.0" prefHeight="25.0" prefWidth="455.0" promptText="Busca multa" />
-      <Button fx:id="btn_buscar" layoutX="480.0" layoutY="24.0" mnemonicParsing="false" onAction="#BuscarMulta" text="Buscar" />
+      <TextField fx:id="tc_busca_multa" layoutX="14.0" layoutY="24.0" onKeyReleased="#BuscarMultaCliente" prefHeight="25.0" prefWidth="455.0" promptText="Busca multa" />
       <Button fx:id="btn_regresar" layoutX="624.0" layoutY="24.0" mnemonicParsing="false" onAction="#RegresarPrestamo" text="Regresar" />
+      <Button fx:id="btn_recalcular" layoutX="15.0" layoutY="375.0" mnemonicParsing="false" onAction="#RecalcularDeuda" text="Recalcular deuda" />
+      <Button layoutX="132.0" layoutY="375.0" mnemonicParsing="false" text="Cancelacion de prestamo o deuda" />
    </children>
 </Pane>

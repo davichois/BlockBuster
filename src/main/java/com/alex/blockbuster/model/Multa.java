@@ -1,20 +1,16 @@
 package com.alex.blockbuster.model;
 
-import java.util.Date;
-
 public class Multa {
     //atributos
     private int idMulta;
-    private Date tiMulta;
     private String prMulta;
     private int sdMulta;
     private Cliente cliente;
     private Prestamo prestamo;
 
     //constructor
-    public Multa(int idMulta, Date tiMulta, String prMulta, int sdMulta, Cliente cliente, Prestamo prestamo) {
+    public Multa(int idMulta, String prMulta, int sdMulta, Cliente cliente, Prestamo prestamo) {
         this.idMulta = idMulta;
-        this.tiMulta = tiMulta;
         this.prMulta = prMulta;
         this.sdMulta = sdMulta;
         this.cliente = cliente;
@@ -28,14 +24,6 @@ public class Multa {
 
     public void setIdMulta(int idMulta) {
         this.idMulta = idMulta;
-    }
-
-    public Date getTiMulta() {
-        return tiMulta;
-    }
-
-    public void setTiMulta(Date tiMulta) {
-        this.tiMulta = tiMulta;
     }
 
     public String getPrMulta() {

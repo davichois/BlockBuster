@@ -3,20 +3,21 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alex.blockbuster.controller.NuevoUsuarioController">
-   <children>
-      <Button fx:id="btn_cancelar_nuevo_usuario" layoutX="177.0" layoutY="319.0" mnemonicParsing="false" onAction="#CancelarNuevoUsuario" text="Cancelar" />
-      <Button fx:id="btn_guardar_nuevo_usuario" layoutX="374.0" layoutY="319.0" mnemonicParsing="false" onAction="#GuardarNuevoUsuario" text="Guardar" />
-      <Label layoutX="248.0" layoutY="28.0" text="Registro de Usuarios" />
-      <Label layoutX="137.0" layoutY="71.0" text="Nombre Completo" />
-      <Label layoutX="136.0" layoutY="117.0" text="DNI" />
-      <Label layoutX="136.0" layoutY="164.0" text="Codigo Usuario" />
-      <Label layoutX="136.0" layoutY="210.0" text="Contraseña Usuario" />
-      <Label layoutX="138.0" layoutY="255.0" text="Confirmar Contraseña" />
-      <TextField fx:id="filtxt_nombre_nuevo_usuario" layoutX="329.0" layoutY="67.0" onAction="#NombreCompletoNuevo" />
-      <TextField fx:id="filtxt_codigo_nuevo_usuario" layoutX="329.0" layoutY="160.0" onAction="#CodigoNuevoUsuario" />
-      <TextField fx:id="filtxt_contrasena" layoutX="329.0" layoutY="206.0" onAction="#ContraseñaNuevoUsuario" />
-      <TextField fx:id="filtxt_confirmar_contrasena" layoutX="329.0" layoutY="251.0" onAction="#CorfirmarContraseñaUsuario" />
-      <TextField fx:id="filtxt_dni_nuevo_usuario" layoutX="329.0" layoutY="113.0" onAction="#DniNuevoUsuario" />
-   </children>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="406.0" prefWidth="354.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alex.blockbuster.controller.NuevoUsuarioController">
+    <children>
+        <Button fx:id="btn_cancelar_nuevo_usuario" layoutX="10.0" layoutY="356.0" mnemonicParsing="false" onAction="#CancelarNuevoUsuario" text="Cancelar" />
+        <Button fx:id="btn_guardar_nuevo_usuario" layoutX="276.0" layoutY="356.0" mnemonicParsing="false" onAction="#GuardarNuevoUsuario" text="Guardar" />
+        <Label layoutX="14.0" layoutY="24.0" text="Registro de Usuarios" />
+        <Label layoutX="10.0" layoutY="84.0" text="Codigo Usuario" />
+        <Label layoutX="10.0" layoutY="133.0" text="Contraseña Usuario" />
+        <Label layoutX="10.0" layoutY="186.0" text="Confirmar Contraseña" />
+        <TextField fx:id="tf_usuario" layoutX="148.0" layoutY="79.0" />
+        <TextField fx:id="tf_contrasena" layoutX="148.0" layoutY="128.0"/>
+        <TextField fx:id="tf_confirm_contrasena" layoutX="148.0" layoutY="182.0" />
+        <RadioButton fx:id="rb_admin" layoutX="148.0" layoutY="249.0" mnemonicParsing="false" onAction="#getAdmin" text="admin">
+         <toggleGroup>
+            <ToggleGroup fx:id="admin" />
+         </toggleGroup></RadioButton>
+        <RadioButton fx:id="rb_no_admin" layoutX="230.0" layoutY="249.0" mnemonicParsing="false" onAction="#getAdmin" text="no admin" toggleGroup="$admin" />
+    </children>
 </Pane>

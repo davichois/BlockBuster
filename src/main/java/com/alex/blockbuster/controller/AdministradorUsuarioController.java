@@ -105,6 +105,15 @@ public class AdministradorUsuarioController implements Initializable {
         }
     }
 
-    public void CrearNuevoUsuario(ActionEvent actionEvent) {
+    public void CrearNuevoUsuario(ActionEvent actionEvent) throws IOException {
+
+        Parent root = FXMLLoader.load(Application.class.getResource("NuevoUsuarioView.fxml"));
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setResizable(true);
+        stage.setTitle("Nuevo Usuario");
+        stage.setScene(scene);
+        stage.show();
+
     }
 }

@@ -42,8 +42,8 @@ public class DataClienteController implements Initializable {
     public Button btn_actualizar;
     public Button btn_clear;
 
-    private ObservableList<Cliente> clientes;
 
+    private ObservableList<Cliente> clientes;
     private int sexoU;
     private int idCliente = 0;
 
@@ -83,13 +83,11 @@ public class DataClienteController implements Initializable {
         Alert alert;
         if (resultado > 0) {
             alert = new Alert(Alert.AlertType.INFORMATION);
-            System.out.println(alert);
             alert.setHeaderText(null);
             alert.setTitle("Info");
             alert.setContentText("Cliente creado correctamente.");
         } else {
             alert = new Alert(Alert.AlertType.ERROR);
-            System.out.println(alert);
             alert.setHeaderText(null);
             alert.setTitle("Error");
             alert.setContentText("Error al insertar cliente");

@@ -10,8 +10,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
-
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -31,7 +31,8 @@ public class SeleccionCatalogoController implements Initializable {
     public TableColumn<Documento, String> tc_nombre;
     public Button btn_regresar;
 
-    private ObservableList<Documento> producto;
+    private ObservableList<Documento> documentos;
+    private ObservableList<Documento> documentosFiltrado;
     private ObservableList<String> tipo_documentos;
     private ObservableList<String> etiquetas;
 
@@ -40,11 +41,12 @@ public class SeleccionCatalogoController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        producto = FXCollections.observableArrayList();
+        documentos = FXCollections.observableArrayList();
+        documentosFiltrado = FXCollections.observableArrayList();
         tipo_documentos = FXCollections.observableArrayList();
         etiquetas = FXCollections.observableArrayList();
 
-        this.tbl_documentos.setItems(producto);
+        this.tbl_documentos.setItems(documentos);
 
         this.tc_id.setCellValueFactory(new PropertyValueFactory<Documento, Integer>("idDocumento"));
         this.tc_nombre.setCellValueFactory(new PropertyValueFactory<Documento, String>("noDocumento"));
@@ -63,8 +65,8 @@ public class SeleccionCatalogoController implements Initializable {
         PreparedStatement ps = conex.prepareStatement("select * from Documento");
         ResultSet rs = ps.executeQuery();
         while (rs.next()) {
-            Documento newDocument = new Documento(rs.getInt("id_documento"), rs.getString("no_documento"), rs.getInt("nu_cantidad"), rs.getString("co_documento"), rs.getString("au_documento"), rs.getString("ed_documento"), rs.getString("ap_documento"), new Etiqueta(rs.getInt("id_etiqueta")), new Tipo(rs.getInt("id_tipo")));
-            this.producto.add(newDocument);
+            Documento newDocument = new Documento(rs.getInt("id_documento"), capitalize(rs.getString("no_documento")), rs.getInt("nu_cantidad"), rs.getString("co_documento"), rs.getString("au_documento"), rs.getString("ed_documento"), rs.getString("ap_documento"), new Etiqueta(rs.getInt("id_etiqueta")), new Tipo(rs.getInt("id_tipo")));
+            this.documentos.add(newDocument);
             this.tbl_documentos.refresh();
         }
     }
@@ -94,5 +96,57 @@ public class SeleccionCatalogoController implements Initializable {
     public void RegresarVentana(ActionEvent actionEvent) {
         Stage stage = (Stage) this.btn_regresar.getScene().getWindow();
         stage.close();
+    }
+
+    public void BusquedaDocumento(KeyEvent keyEvent) {
+        String filtrador = this.txt_buscar.getText();
+        if (filtrador.isEmpty()) {
+            this.tbl_documentos.setItems(documentos);
+        } else {
+            this.documentosFiltrado.clear();
+            for (Documento d : documentos) {
+                if (d.getNoDocumento().toLowerCase().contains(filtrador.toLowerCase())) {
+                    this.documentosFiltrado.add(d);
+                }
+            }
+            this.tbl_documentos.setItems(documentosFiltrado);
+            this.tbl_documentos.refresh();
+        }
+    }
+
+    public String capitalize(String str) {
+        return str.substring(0, 1).toUpperCase() + str.substring(1);
+    }
+
+    public void FiltroTipoDocumento(ActionEvent actionEvent) {
+        String filtrador = this.cb_tipo_informacion.getValue().split(":")[0].trim();
+        if (filtrador.isEmpty()) {
+            this.tbl_documentos.setItems(documentos);
+        } else {
+            this.documentosFiltrado.clear();
+            for (Documento d : documentos) {
+                if (d.getTipo().getIdTipo() == Integer.parseInt(filtrador)) {
+                    this.documentosFiltrado.add(d);
+                }
+            }
+            this.tbl_documentos.setItems(documentosFiltrado);
+            this.tbl_documentos.refresh();
+        }
+    }
+
+    public void FiltroEtiqueta(ActionEvent actionEvent) {
+        String filtrador = this.cb_tema_interes.getValue().split(":")[0].trim();
+        if (filtrador.isEmpty()) {
+            this.tbl_documentos.setItems(documentos);
+        } else {
+            this.documentosFiltrado.clear();
+            for (Documento d : documentos) {
+                if (d.getEtiqueta().getIdEtiqueta() == Integer.parseInt(filtrador)) {
+                    this.documentosFiltrado.add(d);
+                }
+            }
+            this.tbl_documentos.setItems(documentosFiltrado);
+            this.tbl_documentos.refresh();
+        }
     }
 }

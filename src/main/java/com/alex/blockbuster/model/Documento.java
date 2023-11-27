@@ -39,7 +39,7 @@ public class Documento {
     }
 
     public String getNoDocumento() {
-        return noDocumento.toUpperCase();
+        return noDocumento;
     }
 
     public void setNoDocumento(String noDocumento) {

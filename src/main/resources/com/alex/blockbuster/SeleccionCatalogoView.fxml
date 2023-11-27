@@ -8,13 +8,13 @@
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
             <Button fx:id="btn_regresar" layoutX="512.0" layoutY="349.0" mnemonicParsing="false" onAction="#RegresarVentana" text="Regresar" AnchorPane.rightAnchor="22.0" />
-            <ComboBox fx:id="cb_tipo_informacion" layoutX="22.0" layoutY="61.0" prefHeight="26.0" prefWidth="162.0" promptText="Tipo de documento" AnchorPane.leftAnchor="22.0" />
-            <ComboBox fx:id="cb_tema_interes" layoutX="198.0" layoutY="61.0" prefHeight="26.0" prefWidth="170.0" promptText="Etiqueta" AnchorPane.leftAnchor="198.0" />
-            <TextField fx:id="txt_buscar" layoutX="22.0" layoutY="24.0" prefHeight="26.0" prefWidth="557.0" promptText="Buscar" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="22.0" />
+            <ComboBox fx:id="cb_tipo_informacion" layoutX="22.0" layoutY="61.0" onAction="#FiltroTipoDocumento" prefHeight="26.0" prefWidth="162.0" promptText="Tipo de documento" AnchorPane.leftAnchor="22.0" />
+            <ComboBox fx:id="cb_tema_interes" layoutX="198.0" layoutY="61.0" onAction="#FiltroEtiqueta" prefHeight="26.0" prefWidth="170.0" promptText="Etiqueta" AnchorPane.leftAnchor="198.0" />
+            <TextField fx:id="txt_buscar" layoutX="22.0" layoutY="24.0" onKeyReleased="#BusquedaDocumento" prefHeight="26.0" prefWidth="557.0" promptText="Buscar" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="22.0" />
             <TableView fx:id="tbl_documentos" layoutX="22.0" layoutY="108.0" prefHeight="226.0" prefWidth="556.0" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="22.0">
               <columns>
-                <TableColumn fx:id="tc_id" prefWidth="111.0" text="ID" />
-                <TableColumn fx:id="tc_nombre" prefWidth="443.0" text="Nombre" />
+                <TableColumn fx:id="tc_id" prefWidth="48.0" text="ID" />
+                <TableColumn fx:id="tc_nombre" prefWidth="507.0" text="Nombre" />
               </columns>
             </TableView>
          </children>

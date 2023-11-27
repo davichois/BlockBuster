@@ -4,7 +4,7 @@ public class Tipo {
     private int idTipo;
     private String noTipo;
 
-    public Tipo(int idTipo, String niTipo) {
+    public Tipo(int idTipo, String noTipo) {
         this.idTipo = idTipo;
         this.noTipo = noTipo;
     }

@@ -76,7 +76,10 @@ public class ClienteMultaController implements Initializable{
 
     private void traerDatosClienteMultas() throws SQLException {
         Connection conex = db.openConnection();
-        PreparedStatement ps = conex.prepareStatement("select c.no_cliente, c.dni_cliente, d.no_documento, p.fe_prestamo, p.ff_prestamo, p.is_activo, m.pr_multa from multa as m join cliente as c on m.id_cliente = c.id_cliente join prestamo as p on m.id_prestamo = p.id_prestamo join documento as d on p.id_documento = d.id_documento");
+        PreparedStatement ps = conex.prepareStatement("select c.no_cliente, c.dni_cliente, d.no_documento, p.fe_prestamo, p.ff_prestamo, p.is_activo, m.pr_multa\n" +
+                "from prestamo as p left join cliente as c on c.id_cliente = p.id_cliente \n" +
+                "left join multa as m on m.id_prestamo= p.id_prestamo \n" +
+                "join documento as d on p.id_documento = d.id_documento");
         ResultSet rs = ps.executeQuery();
         while (rs.next()) {
             ClienteMulta newClienteMulta = new ClienteMulta(rs.getString("no_cliente"), rs.getString("dni_cliente"), rs.getString("no_documento"), rs.getDate("fe_prestamo").toLocalDate(), rs.getDate("ff_prestamo").toLocalDate(), rs.getInt("is_activo"), rs.getString("pr_multa"));
